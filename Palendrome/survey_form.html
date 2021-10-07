@@ -1,0 +1,85 @@
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+<!DOCTYPE html>
+<html>
+    <head>
+ <link rel="stylesheet" type="text/css" href="responsive-text-project.css">
+  <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">		
+    </head>
+    <body>
+<div class="header background-color">
+  <h1 id="title">TELL US MORE</h1></div>
+  <hr>
+<h2>Let us know how we're doing!</h2>
+  <p id="description">Please use the below form to give us information and feedback about how we're doing.</p>
+  </br>
+  <form class="box" action="www.freecodecamp.com" id="survey-form">
+<div>
+    <label id="name-label">Name: <input id="name" type="text"required placeholder="Your name here"></br></label>
+    <label id="email-label">Email: <input id="email" type="email"required placeholder="Your email here"></br></label>
+	<!--email validation still required-->
+	<label id="number-label">Age: <input id="number" type="number"required name="age" size="2" maxlength="2" min="0" max="99" placeholder="Your age here">
+    <span class="validity"></span></label></br>
+      <label id="dropdown">Describe your status: <select>
+  <option>Student</option>
+  <option>Parent</option>
+  <option>Sibling</option>
+  <option>Other</option>
+</select></label>
+  </div>
+ </br>
+<hr>
+<div>
+<h3 class="would-box box" id="again">Would you do this again?</br>
+</h3>
+  <div id="radio" class="form-box box" name="yes-no-mabye-prefer">
+    <label for="yes">Yes
+		</label>
+	<input id="yes" type="radio" name="yes-no-maybe-prefer" value="yes"></br>
+	<label for="no">No
+		</label>
+	<input id="no" type="radio" name="yes-no-maybe-prefer" value="no"></br>
+	<label for="maybe">Maybe
+		</label>
+	<input id="maybe" type="radio" name="yes-no-maybe-prefer" value="maybe"></br>
+	<label for="prefer">Prefer not to answer
+  </label>
+    <input id="prefer" type="radio" name="yes-no-maybe-prefer" value="prefer">
+</div>
+</div>
+</br><hr>
+    <h2 class="black-border would-box" id="pick-favorite">Tell us your favorites (Check all that apply):</h2
+    </br>
+<div>
+	<input id="art" type="checkbox" value="art" name="favorites">Art 
+		</label>
+	<label for="favorites">
+	<input id="music" type="checkbox" value="music" name="favorites">Music
+		</label>
+	<label for="favorites">
+		<input id="science" type="checkbox" value="science" name="favorites">Science
+	</label>
+	<label for="favorites">
+	<input id="history" type="checkbox" value="history" name="favorites">History
+		</label>
+	<label for="favorites">
+	<input id="gym" type="checkbox" value="gym" name="favorites">Gym
+        </label>
+    </div>
+	<div>
+  <textarea id="comments" class="box additional" type="textarea" placeholder="Additional Comments">
+  </textarea>
+    </div>
+    <div>
+  <button type="submit" id="submit" class="would-box black-border"><strong>Submit</strong>
+</button>
+</div>
+</form>
+
+</body>
+</html>
+	
+
+
+	
+

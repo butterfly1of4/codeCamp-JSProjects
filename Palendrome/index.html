@@ -1,0 +1,131 @@
+HTML <!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+  </head>
+  <body>
+    <h1>CASH REGISTER</h1>
+    <p>Design a cash register drawer function checkCashRegister() that accepts purchase price as the first argument (price), payment as the second argument (cash), and cash-in-drawer (cid) as the third argument.
+    </br>
+      cid is a 2D array listing available currency.</br>
+    </br>
+      The checkCashRegister() function should always return an object with a status key and a change key.</br>
+    </br>
+      Return {status: "INSUFFICIENT_FUNDS", change: []} if cash-in-drawer is less than the change due, or if you cannot return the exact change.</br>
+    </br>
+      Return {status: "CLOSED", change: [...]} with cash-in-drawer as the value for the key change if it is equal to the change due.</br>
+    </br>
+      Otherwise, return {status: "OPEN", change: [...]}, with the change due in coins and bills, sorted in highest to lowest order, as the value of the change key.</br>
+    </br>
+      Currency Unit	Amount</br>
+      Penny	$0.01 (PENNY)</br>
+      Nickel	$0.05 (NICKEL)</br>
+      Dime	$0.1 (DIME)</br>
+      Quarter	$0.25 (QUARTER)</br>
+      Dollar	$1 (ONE)</br>
+      Five Dollars	$5 (FIVE)</br>
+      Ten Dollars	$10 (TEN)</br>
+      Twenty Dollars	$20 (TWENTY)</br>
+      One-hundred Dollars  $100 (ONE HUNDRED)</br>
+      </p
+    </br>
+      Ex:</br>
+      [</br>
+        ["PENNY", 1.01],</br>
+        ["NICKEL", 2.05],</br>
+        ["DIME", 3.1],</br>
+        ["QUARTER", 4.25],</br>
+        ["ONE", 90],</br>
+        ["FIVE", 55],</br>
+        ["TEN", 20],</br>
+        ["TWENTY", 60],</br>
+        ["ONE HUNDRED", 100]</br>
+      ]
+      
+      
+      status: "OPEN", change: [["TWENTY", 60], ["TEN", 20], ["FIVE", 15], ["ONE", 1], ["QUARTER", 0.5], ["DIME", 0.2], ["PENNY", 0.04]]</p>
+    </br>
+  </br>
+
+  <p>console.log(
+    checkCashRegister(19.5, 20, [
+      ["PENNY", 1.01],
+      ["NICKEL", 2.05],
+      ["DIME", 3.1],
+      ["QUARTER", 4.25],
+      ["ONE", 90],
+      ["FIVE", 55],
+      ["TEN", 20],
+      ["TWENTY", 60],
+      ["ONE HUNDRED", 100],
+    ])
+  ); //{status: "OPEN", change: [["QUARTER", 0.5]]}
+  </p>
+</br></br>
+<p>
+  console.log(checkCashRegister(3.26, 100, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]));
+  //{status: "OPEN", change: [["TWENTY", 60], ["TEN", 20], ["FIVE", 15], ["ONE", 1], ["QUARTER", 0.5], ["DIME", 0.2], ["PENNY", 0.04]]}
+</p>
+</br></br>
+<p>
+  console.log(
+    checkCashRegister(19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 1], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]])
+  ); 
+  //{status: "INSUFFICIENT_FUNDS", change: []}</p>
+
+</br>
+</br>
+<p>
+  console.log(
+    checkCashRegister(19.5, 20, [
+      ["PENNY", 0.01],
+      ["NICKEL", 0],
+      ["DIME", 0],
+      ["QUARTER", 0],
+      ["ONE", 0],
+      ["FIVE", 0],
+      ["TEN", 0],
+      ["TWENTY", 0],
+      ["ONE HUNDRED", 0],
+    ])
+  ); //{status: "INSUFFICIENT_FUNDS", change: []}
+</p>
+</br>
+</br>
+<p>
+  console.log(
+    checkCashRegister(19.5, 20, [
+      ["PENNY", 0.5],
+      ["NICKEL", 0],
+      ["DIME", 0],
+      ["QUARTER", 0],
+      ["ONE", 0],
+      ["FIVE", 0],
+      ["TEN", 0],
+      ["TWENTY", 0],
+      ["ONE HUNDRED", 0],
+    ])
+  ); //{status: "CLOSED", change: [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]}
+  </p>
+    <!-- <script src="palendrome.js"></script> -->
+    <!-- <script src="telephone_number_validator.js"></script> -->
+    <!-- <script src="caesars_cipher.js"></script> -->
+    <!-- <script src="roman_numerals.js"></script> -->
+
+    <!-- <script src="cash_register.js"></script> -->
+    <script src="test_field.js"></script>
+    <!-- <script src="codedump.js"></script> -->
+    <!-- <script src="final_register.js"></script> -->
+
+
+  </body>
+</html>
