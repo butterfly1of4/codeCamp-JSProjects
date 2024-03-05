@@ -1,132 +1,55 @@
-HTML <!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
   <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title></title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Palndrome checker</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
   </head>
   <body>
-    <h1>CASH REGISTER</h1>
-    <p>Design a cash register drawer function checkCashRegister() that accepts purchase price as the first argument (price), payment as the second argument (cash), and cash-in-drawer (cid) as the third argument.
-    </br>
-      cid is a 2D array listing available currency.</br>
-    </br>
-      The checkCashRegister() function should always return an object with a status key and a change key.</br>
-    </br>
-      Return {status: "INSUFFICIENT_FUNDS", change: []} if cash-in-drawer is less than the change due, or if you cannot return the exact change.</br>
-    </br>
-      Return {status: "CLOSED", change: [...]} with cash-in-drawer as the value for the key change if it is equal to the change due.</br>
-    </br>
-      Otherwise, return {status: "OPEN", change: [...]}, with the change due in coins and bills, sorted in highest to lowest order, as the value of the change key.</br>
-    </br>
-      Currency Unit	Amount</br>
-      Penny	$0.01 (PENNY)</br>
-      Nickel	$0.05 (NICKEL)</br>
-      Dime	$0.1 (DIME)</br>
-      Quarter	$0.25 (QUARTER)</br>
-      Dollar	$1 (ONE)</br>
-      Five Dollars	$5 (FIVE)</br>
-      Ten Dollars	$10 (TEN)</br>
-      Twenty Dollars	$20 (TWENTY)</br>
-      One-hundred Dollars  $100 (ONE HUNDRED)</br>
-      </p
-    </br>
-      Ex:</br>
-      [</br>
-        ["PENNY", 1.01],</br>
-        ["NICKEL", 2.05],</br>
-        ["DIME", 3.1],</br>
-        ["QUARTER", 4.25],</br>
-        ["ONE", 90],</br>
-        ["FIVE", 55],</br>
-        ["TEN", 20],</br>
-        ["TWENTY", 60],</br>
-        ["ONE HUNDRED", 100]</br>
-      ]
-      
-      
-      status: "OPEN", change: [["TWENTY", 60], ["TEN", 20], ["FIVE", 15], ["ONE", 1], ["QUARTER", 0.5], ["DIME", 0.2], ["PENNY", 0.04]]</p>
-    </br>
-  </br>
+   <h2>
+    Return true if the given string is a palindrome. Otherwise, return false.
 
-  <p>console.log(
-    checkCashRegister(19.5, 20, [
-      ["PENNY", 1.01],
-      ["NICKEL", 2.05],
-      ["DIME", 3.1],
-      ["QUARTER", 4.25],
-      ["ONE", 90],
-      ["FIVE", 55],
-      ["TEN", 20],
-      ["TWENTY", 60],
-      ["ONE HUNDRED", 100],
-    ])
-  ); //{status: "OPEN", change: [["QUARTER", 0.5]]}
-  </p>
-</br></br>
-<p>
-  console.log(checkCashRegister(3.26, 100, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]));
-  //{status: "OPEN", change: [["TWENTY", 60], ["TEN", 20], ["FIVE", 15], ["ONE", 1], ["QUARTER", 0.5], ["DIME", 0.2], ["PENNY", 0.04]]}
-</p>
-</br></br>
-<p>
-  console.log(
-    checkCashRegister(19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 1], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]])
-  ); 
-  //{status: "INSUFFICIENT_FUNDS", change: []}</p>
+A palindrome is a word or sentence that's spelled the same way both forward and backward, ignoring punctuation, case, and spacing.
 
-</br>
-</br>
-<p>
-  console.log(
-    checkCashRegister(19.5, 20, [
-      ["PENNY", 0.01],
-      ["NICKEL", 0],
-      ["DIME", 0],
-      ["QUARTER", 0],
-      ["ONE", 0],
-      ["FIVE", 0],
-      ["TEN", 0],
-      ["TWENTY", 0],
-      ["ONE HUNDRED", 0],
-    ])
-  ); //{status: "INSUFFICIENT_FUNDS", change: []}
-</p>
-</br>
-</br>
-<p>
-  console.log(
-    checkCashRegister(19.5, 20, [
-      ["PENNY", 0.5],
-      ["NICKEL", 0],
-      ["DIME", 0],
-      ["QUARTER", 0],
-      ["ONE", 0],
-      ["FIVE", 0],
-      ["TEN", 0],
-      ["TWENTY", 0],
-      ["ONE HUNDRED", 0],
-    ])
-  ); //{status: "CLOSED", change: [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]}
-  </p>
-    <!-- <script src="palendrome.js"></script> -->
-    <!-- <script src="telephone_number_validator.js"></script> -->
-    <!-- <script src="caesars_cipher.js"></script> -->
-    <!-- <script src="roman_numerals.js"></script> -->
+Note: You'll need to remove all non-alphanumeric characters (punctuation, spaces and symbols) and turn everything into the same case (lower or upper case) in order to check for palindromes.
 
-    <!-- <script src="cash_register.js"></script> -->
-    <!-- <script src="test_field.js"></script> -->
-    <!-- <script src="codedump.js"></script> -->
-    <!-- <script src="final_register.js"></script> -->
-    <script src="register_take2.js"></script>
+We'll pass strings with varying formats, such as "racecar", "RaceCar", and "race CAR" among others.
 
+We'll also pass strings with special symbols, such as "2A3*3a2", "2A3 3a2", and "2_A3*3#A2".
 
+Steps:
+
+-REGEX needed:
+    -global match (\g)(/g)
+    //-ignore whitespace (\s)
+    -ignore case (toLowerCase) OR (/''/i)
+    -ignore symbols/match all non-whitespace (\S)
+    -beginning matching (^)
+    -end matching ($)
+    -all letters and numbers (\w)
+    -all non-numbers (\W) OR input.replace(/[^0-9a-z]/gi, '')
+    
+1. Create a new string (new_str) that doesn't include cases, spaces or symbols
+      -//remove space == input = input.replace(/\s/g, '') OR input.replace(/\s/gi, '')
+      -//to lowercase == input= input.toLowerCase()
+      -//    for (var i = str.length - 1; i >= 0; i--) {
+        newString += str[i]}
+2. Create a string that is the reverse of new_str (backward_str) //split(),reverse(),join()
+OR
+2. OR look into regex for matching the beginning (^) or ends ($) of strings
+3. Using an array (new_arr && backward_arr), split the strings into individual letters
+4. Create a loop that compares each entry in new_arr w/ the corresponding entry in backward_arr
+5. If the 2 arrays match, return True
+6. If they don't return False
+   </h2>
+    
+    <script src="palendrome.js" async defer></script>
   </body>
 </html>
