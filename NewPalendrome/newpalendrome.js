@@ -1,23 +1,41 @@
 const textInput = document.querySelector("#text-input");
-const checkButton = document.querySelector('#check-btn')
-let str = textInput.innerText;
-let isEntered = false;
+const checkButton = document.querySelector('#check-btn');
+const resutBox = document.querySelector('#result');
+let str = "";
+let isChanged = false;
 
+console.log(textInput,"textinput")
+console.log(checkButton, "buttoning")
 //Add text to the textbox to be tested
-textInput.addEventListener("onchange",getText)
-textInput.onchange = getText;
-checkButton.onclick = checkInput;
+textInput.addEventListener("change",getText)
+resutBox.addEventListener("change",addText)
 
-function getText() {
-  console.log(textInput.innerHTML)
-  console.log(str, "typing")
+function getText(str) {
+  let x = document.getElementById("text-input");
+  console.log(str, "value")
+str =  x.value;
+isChanged = true;
+return str
+} 
+
+function addText() {
+  let x = document.getElementById("result");
+  if(isChanged){
+    x.value = str;
+    x.innerText = str;
+  }
+  else {
+    console.log('not changed')
+  }
 }
-// checkButton.addEventListener('click',checkInput)
-getText()
+
+checkButton.addEventListener('click',checkInput)
+
 
 //Check for alert on button submit
 function checkInput() {
   // getText();
+  console.log(isChanged)
 alert("Please input a value")
   console.log("button clicked")
 }
